@@ -1,0 +1,26 @@
+name: Firmware and portable tests
+on: [push, pull_request]
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python tools/run_tests.py --cxx g++
+  firmware:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install platformio==6.1.18
+      - run: pio run -e esp32cam
+      - uses: actions/upload-artifact@v4
+        with:
+          name: esp32cam-firmware
+          path: |
+            .pio/build/esp32cam/*.bin
+            .pio/build/esp32cam/firmware.elf

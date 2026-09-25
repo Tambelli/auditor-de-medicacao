@@ -1,0 +1,14 @@
+.venv/
+.pio/
+.pio-core/
+build/
+sdkconfig
+sdkconfig.old
+sdkconfig.esp32cam
+sdkconfig.*.bak
+managed_components/
+__pycache__/
+*.pyc
+artifacts/
+logs/
+.tools/
