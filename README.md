@@ -90,6 +90,8 @@ Leia o [protocolo de bancada](docs/VALIDACAO.md) para executar os ensaios de 30 
 
 ## Estrutura
 
+Para a documentação consolidada da implementação, consulte [DOCUMENTACAO_IMPLEMENTACAO.md](DOCUMENTACAO_IMPLEMENTACAO.md).
+
 ```text
 components/auditor/   visão e máquina de estados C++ independentes do hardware
 main/                câmera, NVS, serial e integração ESP-IDF
